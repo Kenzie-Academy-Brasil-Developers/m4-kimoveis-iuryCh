@@ -8,7 +8,7 @@ export const verifyTokenMiddleware = (
   res: Response,
   next: NextFunction
 ): void => {
-  const authToken = req.headers['authorization'];
+  const authToken: string | undefined = req.headers['authorization'];
 
   if (!authToken) throw new AppError('Missing bearer token', 401);
 

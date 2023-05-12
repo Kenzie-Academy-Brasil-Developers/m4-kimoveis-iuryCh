@@ -3,7 +3,9 @@ import { RealEstate } from '../../entities';
 import { AppDataSource } from '../../data-source';
 import { AppError } from '../../errors';
 
-export const listAllRealEstateSchedules = async (id: number) => {
+export const listAllRealEstateSchedules = async (
+  id: number
+): Promise<RealEstate | null> => {
   const realEstateRepo: Repository<RealEstate> =
     AppDataSource.getRepository(RealEstate);
 

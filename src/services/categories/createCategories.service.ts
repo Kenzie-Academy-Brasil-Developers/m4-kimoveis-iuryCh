@@ -13,7 +13,7 @@ export const createCategoriesService = async (
   const categoriesRepo: Repository<Category> =
     AppDataSource.getRepository(Category);
 
-  const category = await categoriesRepo.findOne({
+  const category: Category | null = await categoriesRepo.findOne({
     where: {
       name: payload.name,
     },

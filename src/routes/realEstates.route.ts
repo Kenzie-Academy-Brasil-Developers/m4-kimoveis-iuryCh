@@ -8,7 +8,7 @@ import {
 import { validateBodyMiddleware } from '../middlewares/validBody.middleware';
 import { createRealEstateSchema } from '../schemas/realEstate.schema';
 
-export const realEstateRoutes = Router();
+export const realEstateRoutes: Router = Router();
 
 realEstateRoutes.post(
   '',

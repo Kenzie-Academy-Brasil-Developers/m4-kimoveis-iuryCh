@@ -17,7 +17,7 @@ export const createTokenService = async (
   });
   if (!user) throw new AppError('Invalid credentials', 401);
 
-  const passwordMatch = await compare(payload.password, user.password);
+  const passwordMatch: boolean = await compare(payload.password, user.password);
 
   if (!passwordMatch) throw new AppError('Invalid credentials', 401);
 

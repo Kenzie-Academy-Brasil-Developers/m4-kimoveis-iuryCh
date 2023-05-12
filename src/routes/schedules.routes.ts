@@ -10,7 +10,7 @@ import { verifyScheduleIsValid } from '../middlewares/isValidSchedule.middleware
 import { isAdminMiddleware } from '../middlewares/isAdminMiddleware';
 import { isUserMiddleware } from '../middlewares/isUser.middleware';
 
-export const scheduleRoutes = Router();
+export const scheduleRoutes: Router = Router();
 
 scheduleRoutes.post(
   '',

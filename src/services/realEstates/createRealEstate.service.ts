@@ -6,6 +6,7 @@ import {
 import { Address, Category, RealEstate } from '../../entities';
 import { AppDataSource } from '../../data-source';
 import { AppError } from '../../errors';
+import { TAddressObject } from '../../interfaces/address.interface';
 
 export const createRealestateService = async (
   payload: TRealEstateRequest
@@ -16,8 +17,8 @@ export const createRealestateService = async (
   const categoryRepo: Repository<Category> =
     AppDataSource.getRepository(Category);
 
-  const address = payload.address;
-  const addressExist = await addressRepo.findOne({
+  const address: TAddressObject = payload.address;
+  const addressExist: Address | null = await addressRepo.findOne({
     where: {
       street: address.street,
       zipCode: address.zipCode,

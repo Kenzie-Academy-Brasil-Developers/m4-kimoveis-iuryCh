@@ -15,7 +15,7 @@ import { verifyTokenMiddleware } from '../middlewares/verifyToken.midleware';
 import { isAdminMiddleware } from '../middlewares/isAdminMiddleware';
 import { VerifyUserIdMiddleware } from '../middlewares/validUserId.middleware';
 
-export const usersRoutes = Router();
+export const usersRoutes: Router = Router();
 
 usersRoutes.post(
   '',

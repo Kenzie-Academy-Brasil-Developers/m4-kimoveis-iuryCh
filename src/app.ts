@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import 'express-async-errors';
-import express from 'express';
+import express, { Application } from 'express';
 import { errorHandler } from './errors';
 import { usersRoutes } from './routes/users.routes';
 import { loginRoutes } from './routes/login.routes';
@@ -8,7 +8,7 @@ import { categoriesRoutes } from './routes/categories.routes';
 import { realEstateRoutes } from './routes/realEstates.route';
 import { scheduleRoutes } from './routes/schedules.routes';
 
-const app = express();
+const app: Application = express();
 app.use(express.json());
 
 app.use('/users', usersRoutes);

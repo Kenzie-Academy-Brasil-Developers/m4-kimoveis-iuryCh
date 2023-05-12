@@ -11,7 +11,6 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Schedule } from './schedules.entity';
-// import { Schedule } from './schedules.entity';
 
 @Entity('users')
 export class User {

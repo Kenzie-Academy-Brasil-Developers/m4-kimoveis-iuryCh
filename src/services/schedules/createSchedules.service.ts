@@ -7,7 +7,7 @@ import { AppError } from '../../errors';
 export const createScheduleService = async (
   payload: TScheduleRequest,
   id: number
-) => {
+): Promise<Object> => {
   const scheduleRepo: Repository<Schedule> =
     AppDataSource.getRepository(Schedule);
   const realEstateRepo: Repository<RealEstate> =
@@ -33,13 +33,13 @@ export const createScheduleService = async (
 
   const date = payload.date;
   const hour = payload.hour;
-  const checkScheduleTime = await scheduleRepo
+  const checkScheduleTime: Schedule | null = await scheduleRepo
     .createQueryBuilder('schedule')
     .where('schedule.realEstateId = :realEstateId', {
       realEstateId: payload.realEstateId,
     })
-    .andWhere('schedule.date = :date', { date: payload.date })
-    .andWhere('schedule.hour = :hour', { hour: payload.hour })
+    .andWhere('schedule.date = :date', { date })
+    .andWhere('schedule.hour = :hour', { hour })
     .getOne();
 
   if (checkScheduleTime) {

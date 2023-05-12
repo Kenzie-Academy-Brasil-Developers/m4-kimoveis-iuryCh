@@ -13,7 +13,7 @@ export const createUserService = async (
 
   await userRespo.save(user);
 
-  const userNoPWD = createdUserSchema.parse(user);
+  const userNoPWD: TUserResponse = createdUserSchema.parse(user);
 
   return userNoPWD;
 };

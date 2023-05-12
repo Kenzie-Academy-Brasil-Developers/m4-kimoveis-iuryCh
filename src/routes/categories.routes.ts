@@ -9,7 +9,7 @@ import {
   listCategoryByIdController,
 } from '../controllers/categories.controllers';
 
-export const categoriesRoutes = Router();
+export const categoriesRoutes: Router = Router();
 
 categoriesRoutes.post(
   '',

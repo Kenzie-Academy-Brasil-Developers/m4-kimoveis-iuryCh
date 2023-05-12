@@ -13,7 +13,7 @@ export const verifyEmailMiddleware = async (
   const userEmail = req.body.email;
 
   if (userEmail) {
-    const exist = await userRepo.exist({
+    const exist: boolean = await userRepo.exist({
       where: { email: userEmail },
     });
 
