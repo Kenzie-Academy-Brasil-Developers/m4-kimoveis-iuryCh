@@ -6,8 +6,8 @@ export const isAdminMiddleware = (
   res: Response,
   next: NextFunction
 ): void => {
+
   if (res.locals.admin) {
-    console.log(res.locals.admin);
     return next();
   } else if (Number(res.locals.id) !== Number(req.params.id)) {
     throw new AppError('Insufficient permission', 403);

@@ -18,7 +18,8 @@ export const retrieveSchedulesController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const id = res.locals.id;
+  const id = Number(req.params.id);
+  
   const schedules = await listAllRealEstateSchedules(id);
 
   return res.json(schedules);

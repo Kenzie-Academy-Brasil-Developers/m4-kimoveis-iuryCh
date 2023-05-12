@@ -41,7 +41,7 @@ export const createScheduleService = async (
     .andWhere('schedule.date = :date', { date: payload.date })
     .andWhere('schedule.hour = :hour', { hour: payload.hour })
     .getOne();
-  console.log(checkScheduleTime);
+
   if (checkScheduleTime) {
     throw new AppError(
       'Schedule to this real estate at this date and time already exists',

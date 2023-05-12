@@ -18,7 +18,6 @@ export const verifyScheduleIsValid = (
   const checkHour = scheduleData.hour.split(':')[0];
   if (Number(checkHour) < 8 || Number(checkHour) > 18)
     throw new AppError('Invalid hour, available times are 8AM to 18PM', 400);
-  //   console.log(scheduleData.hour.split(':')[0]);
 
   const weekDay = new Date(scheduleData.date);
   if (weekDay.getDay() === 0 || weekDay.getDay() === 6)

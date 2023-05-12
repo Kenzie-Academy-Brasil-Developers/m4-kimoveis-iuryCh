@@ -6,8 +6,8 @@ export const isUserMiddleware = (
   res: Response,
   next: NextFunction
 ): void => {
-  if (res.locals.id !== Number(req.params.id)) {
-    throw new AppError('Insufficient Permission', 403);
+  if (!res.locals.admin) {
+    throw new AppError('Insufficient permission', 403);
   }
   return next();
 };

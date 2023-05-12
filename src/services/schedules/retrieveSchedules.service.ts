@@ -14,5 +14,18 @@ export const listAllRealEstateSchedules = async (id: number) => {
   });
   if (!getRealEstate) throw new AppError('RealEstate not found', 404);
 
-  return;
+  const realEstateFind: RealEstate | null = await realEstateRepo.findOne({
+    where: {
+      id: id,
+    },
+    relations: {
+      address: true,
+      category: true,
+      schedules: {
+        user: true,
+      },
+    },
+  });
+
+  return realEstateFind;
 };

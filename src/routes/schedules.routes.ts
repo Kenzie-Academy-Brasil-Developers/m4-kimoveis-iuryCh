@@ -8,6 +8,7 @@ import { createScheduleSchema } from '../schemas/schedule.schema';
 import { validateBodyMiddleware } from '../middlewares/validBody.middleware';
 import { verifyScheduleIsValid } from '../middlewares/isValidSchedule.middleware';
 import { isAdminMiddleware } from '../middlewares/isAdminMiddleware';
+import { isUserMiddleware } from '../middlewares/isUser.middleware';
 
 export const scheduleRoutes = Router();
 
@@ -22,5 +23,6 @@ scheduleRoutes.get(
   '/realEstate/:id',
   verifyTokenMiddleware,
   isAdminMiddleware,
+  isUserMiddleware,
   retrieveSchedulesController
 );
