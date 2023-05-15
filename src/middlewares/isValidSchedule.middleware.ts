@@ -1,8 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
 import { TScheduleRequest } from '../interfaces/schedule.interface';
-import { Repository } from 'typeorm';
-import { Schedule } from '../entities';
-import { AppDataSource } from '../data-source';
 import { AppError } from '../errors';
 
 export const verifyScheduleIsValid = (

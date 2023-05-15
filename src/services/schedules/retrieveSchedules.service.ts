@@ -28,6 +28,6 @@ export const listAllRealEstateSchedules = async (
       },
     },
   });
-
+  console.log(realEstateFind);
   return realEstateFind;
 };
