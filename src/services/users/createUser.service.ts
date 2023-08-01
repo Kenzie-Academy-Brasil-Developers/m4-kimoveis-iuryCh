@@ -15,5 +15,5 @@ export const createUserService = async (
 
   const userNoPWD: TUserResponse = createdUserSchema.parse(user);
 
-  return userNoPWD;
+  return userNoPWD; 
 };
